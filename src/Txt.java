@@ -33,7 +33,7 @@ public class Txt {
 		
 	}
 
-	public static void saglabatPasutijumu(ArrayList<String> adrese, ArrayList<String> talrunis,
+	public static void saglabatPasutijumu(ArrayList<Double> cena, ArrayList<String> adrese, ArrayList<String> talrunis,
 			ArrayList<String> vards, ArrayList<String> piegade, ArrayList<Integer> izmers,
 			ArrayList<String> uzkodas, ArrayList<String> dzerieni, int pasutijumuSkaits) throws IOException {
 		
@@ -50,15 +50,30 @@ public class Txt {
             JOptionPane.showMessageDialog(null, "Nesenākais pasūtījums saglabāts nodotie.txt");
     }
 		PrintWriter raksta = new PrintWriter(new FileWriter(failaNosaukums, true));
-		raksta.println(vards.size());
-		raksta.println(vards.get(0));
-		raksta.println(adrese.get(0));
-		raksta.println(talrunis.get(0));
-		raksta.println(piegade.get(0));
-		raksta.println(izmers.get(0));
-		raksta.println(uzkodas.get(0));
-		raksta.println(dzerieni.get(0));
+		raksta.println("Pasūtījuma ID: "+vards.size());
+		raksta.println("Vārds: "+vards.get(0));
+		raksta.println("Adrese: "+adrese.get(0));
+		raksta.println("Tālrunis: "+talrunis.get(0));
+		raksta.println("Ar piegādi: "+piegade.get(0));
+		raksta.println("Picas izmērs: "+izmers.get(0));
+		raksta.println("Uzkodas: "+uzkodas.get(0));
+		raksta.println("Dzērieni: "+dzerieni.get(0));
+		raksta.println("Cena: "+cena.get(0));
 		raksta.close();
 	}
+
+	public static void aprekinaCenu(ArrayList<Double> cena, ArrayList<String> adrese, ArrayList<String> talrunis, ArrayList<String> vards, ArrayList<String> piegade, ArrayList<Integer> izmers, ArrayList<String> uzkodas, ArrayList<String> dzerieni) {
+		double pasutijumaCena=0;
+		if(izmers.get(0)>15) {
+			pasutijumaCena+=10.99;
+		} else {
+			pasutijumaCena+=4.99;
+		}
+		
+		if(piegade.get(0).equals("Jā")) {
+			pasutijumaCena+=3.99;
+	}
+		cena.add(0, pasutijumaCena);
 	
+}
 }

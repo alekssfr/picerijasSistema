@@ -15,6 +15,7 @@ public class PicerijasSistema {
 		ArrayList<Integer> izmers = new ArrayList<Integer>();
 		ArrayList<String> uzkodas = new ArrayList<String>();
 		ArrayList<String> dzerieni = new ArrayList<String>();
+		ArrayList<Double> cena = new ArrayList<Double>();
 		
 		do {
 			izvele = JOptionPane.showInputDialog("Ievadi izvēli:");
@@ -34,10 +35,10 @@ public class PicerijasSistema {
 				Txt.skatitNodotos();
 				break;
 			case "5":
-				Txt.skatitNodotos();
+				Txt.aprekinaCenu(cena, adrese, talrunis, vards, piegade, izmers, uzkodas, dzerieni);
 				break;
 			case "6":
-				Txt.saglabatPasutijumu(adrese, talrunis, vards, piegade, izmers, uzkodas, dzerieni, pasutijumuSkaits);
+				Txt.saglabatPasutijumu(cena, adrese, talrunis, vards, piegade, izmers, uzkodas, dzerieni, pasutijumuSkaits);
 				break;
 			default:
 				JOptionPane.showMessageDialog(null, "Kļūda", "Kļūda", 
