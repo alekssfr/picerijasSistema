@@ -10,6 +10,10 @@ public class PicerijasSistema {
 		ArrayList<String> vards = new ArrayList<String>();
 		ArrayList<String> piegade = new ArrayList<String>();
 		
+		ArrayList<Integer> izmers = new ArrayList<Integer>();
+		ArrayList<String> uzkodas = new ArrayList<String>();
+		ArrayList<String> dzerieni = new ArrayList<String>();
+		
 		do {
 			izvele = JOptionPane.showInputDialog("Ievadi izvēli:");
 			switch(izvele) {
@@ -19,7 +23,7 @@ public class PicerijasSistema {
 				Klients.registretPasutijumu(adrese, talrunis, vards, piegade);
 				break;
 			case "2":
-				
+				Pica.picasIzvele(izmers, uzkodas, dzerieni);
 				break;
 			}
 		}while(!izvele.equals("0"));
