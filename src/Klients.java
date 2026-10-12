@@ -6,11 +6,11 @@ public class Klients {
 
 	public static void registretPasutijumu(ArrayList<String> adrese, ArrayList<String> talrunis, ArrayList<String> vards, ArrayList<String> piegade) {
 		String klientaVards = JOptionPane.showInputDialog("Ievadi klienta vārdu:");
-		vards.add(klientaVards);
+		vards.add(0,klientaVards);
 		String klientaAdrese = JOptionPane.showInputDialog("Ievadi klienta adresi");
-		adrese.add(klientaAdrese);
+		adrese.add(0,klientaAdrese);
 		String klientaTalrunis = JOptionPane.showInputDialog("Ievadi klienta tālruņa nr.:");
-		talrunis.add(klientaTalrunis);
+		talrunis.add(0,klientaTalrunis);
 		int arPiegadi = JOptionPane.showConfirmDialog(null, "Vai pasūtījumu jāpiegādā?",
                 "Piegāde", JOptionPane.YES_NO_OPTION);
 		 if (arPiegadi == JOptionPane.YES_OPTION) {

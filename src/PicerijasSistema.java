@@ -32,7 +32,9 @@ public class PicerijasSistema {
 			case "4":
 				Txt.skatitNodotos();
 				break;
-			
+			case "5":
+				Txt.saglabatPasutijumu(adrese, talrunis, vards, piegade, izmers, uzkodas, dzerieni);
+				break;
 			}
 		}while(!izvele.equals("0"));
 	}
