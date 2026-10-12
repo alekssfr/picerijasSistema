@@ -1,11 +1,12 @@
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 public class PicerijasSistema {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
 		String izvele=null;
+		int pasutijumuSkaits=0;
 		ArrayList<String> adrese = new ArrayList<String>();
 		ArrayList<String> talrunis = new ArrayList<String>();
 		ArrayList<String> vards = new ArrayList<String>();
@@ -33,8 +34,14 @@ public class PicerijasSistema {
 				Txt.skatitNodotos();
 				break;
 			case "5":
-				Txt.saglabatPasutijumu(adrese, talrunis, vards, piegade, izmers, uzkodas, dzerieni);
+				Txt.skatitNodotos();
 				break;
+			case "6":
+				Txt.saglabatPasutijumu(adrese, talrunis, vards, piegade, izmers, uzkodas, dzerieni, pasutijumuSkaits);
+				break;
+			default:
+				JOptionPane.showMessageDialog(null, "Kļūda", "Kļūda", 
+                        JOptionPane.INFORMATION_MESSAGE);
 			}
 		}while(!izvele.equals("0"));
 	}

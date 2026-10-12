@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -33,9 +35,10 @@ public class Txt {
 
 	public static void saglabatPasutijumu(ArrayList<String> adrese, ArrayList<String> talrunis,
 			ArrayList<String> vards, ArrayList<String> piegade, ArrayList<Integer> izmers,
-			ArrayList<String> uzkodas, ArrayList<String> dzerieni) throws FileNotFoundException {
+			ArrayList<String> uzkodas, ArrayList<String> dzerieni, int pasutijumuSkaits) throws IOException {
 		
 		String failaNosaukums=null;
+		pasutijumuSkaits++;
 		
 		int izvele = JOptionPane.showConfirmDialog(null, "Atvērt aktīvos pasūtījumus? (Jā - aktīvie, Nē - nodotie)",
                 "Izvēle", JOptionPane.YES_NO_OPTION);
@@ -46,7 +49,8 @@ public class Txt {
         	failaNosaukums = "nodotie.txt";
             JOptionPane.showMessageDialog(null, "Nesenākais pasūtījums saglabāts nodotie.txt");
     }
-		PrintWriter raksta = new PrintWriter(failaNosaukums);
+		PrintWriter raksta = new PrintWriter(new FileWriter(failaNosaukums, true));
+		raksta.println(vards.size());
 		raksta.println(vards.get(0));
 		raksta.println(adrese.get(0));
 		raksta.println(talrunis.get(0));
