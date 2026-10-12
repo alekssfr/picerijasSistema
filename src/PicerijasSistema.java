@@ -1,9 +1,10 @@
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 public class PicerijasSistema {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		String izvele=null;
 		ArrayList<String> adrese = new ArrayList<String>();
 		ArrayList<String> talrunis = new ArrayList<String>();
@@ -25,6 +26,13 @@ public class PicerijasSistema {
 			case "2":
 				Pica.picasIzvele(izmers, uzkodas, dzerieni);
 				break;
+			case "3":
+				Txt.skatitAktivos();
+				break;
+			case "4":
+				Txt.skatitNodotos();
+				break;
+			
 			}
 		}while(!izvele.equals("0"));
 	}
