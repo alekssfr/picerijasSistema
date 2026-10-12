@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 public class PicerijasSistema {
 
 	public static void main(String[] args) {
 		String izvele=null;
-		String adrese = null, talrunis = null, vards = null;
+		ArrayList<String> adrese = new ArrayList<String>();
+		ArrayList<String> talrunis = new ArrayList<String>();
+		ArrayList<String> vards = new ArrayList<String>();
 		
 		do {
 			izvele = JOptionPane.showInputDialog("Ievadi izvēli:");
