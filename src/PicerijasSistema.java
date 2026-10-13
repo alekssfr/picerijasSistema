@@ -18,7 +18,14 @@ public class PicerijasSistema {
 		ArrayList<Double> cena = new ArrayList<Double>();
 		
 		do {
-			izvele = JOptionPane.showInputDialog("Ievadi izvēli:");
+			izvele = JOptionPane.showInputDialog("Ievadi izvēli:\n"
+					+ "0 - Iziet\n"
+					+ "1 - Registret Pasutijumu\n"
+					+ "2 - Pica un piedevas\n"
+					+ "3 - Skatit aktivos pasutijumus txt\n"
+					+ "4 - Skatit nodotos pasutijumus txt\n"
+					+ "5 - Aprekini pasutijuma cenu\n"
+					+ "6 - Saglabat nesenako pasutijumu\n");
 			switch(izvele) {
 			case "0":
 				break;
